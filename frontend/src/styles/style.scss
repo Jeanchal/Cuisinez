@@ -1,0 +1,129 @@
+$break-point-1: 600px;
+$color-1: rgba(255, 202, 15, 1);
+$color-2: rgba(217, 248, 248, 0.9);
+$color-3: rgba(124, 121, 121, 0.568);
+
+body {
+  margin: 0;
+  background-color: $color-2;
+  caret-color: transparent;
+  min-width: 300px;
+  input {
+    caret-color: black !important;
+  }
+  a,
+  a:visited,
+  a:active {
+    color: black;
+    text-decoration: none;
+  }
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+#logo {
+  background-color: $color-1;
+  display: flex;
+  cursor: pointer;
+  padding: 5px;
+  #burger_menu {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    @media (min-width: $break-point-1) {
+      display: none;
+    }
+    div {
+      width: 40px;
+      margin-top: 6px;
+      height: 5px;
+      border-radius: 5px;
+      background-color: white;
+    }
+  }
+  h1 {
+    margin: 0;
+    font-size: 250%;
+    font-weight: lighter;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+}
+#Navigation {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-3;
+  width: 50%;
+  @media (min-width: $break-point-1) {
+    flex-direction: row;
+    background-color: white;
+    width: 100%;
+  }
+  a {
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+.page {
+  margin-top: 80px;
+  @media (min-width: $break-point-1) {
+    margin-top: 140px;
+  }
+  .displayNav {
+    display: none;
+    @media (min-width: $break-point-1) {
+      display: block;
+    }
+  }
+}
+#acceuil {
+  #recherche-container {
+    background-color: $color-2;
+    width: 100%;
+    position: fixed;
+    top: 50px;
+    z-index: 0;
+    #recherche {
+      margin: 20px 0 7px 20px;
+      padding-left: 10px;
+      width: 70%;
+      height: 30px;
+      border: 1px solid black;
+      border-radius: 5px;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+  #recette_container {
+    padding-top: 40px;
+    margin: 20px 20px 2000px 20px;
+    .recette {
+      border: 5px solid white;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 1px 1px 5px grey;
+      img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+      }
+      .recette_text {
+        padding: 10px;
+        h3 {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
