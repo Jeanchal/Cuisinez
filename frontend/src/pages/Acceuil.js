@@ -20,6 +20,7 @@ const Acceuil = () => {
             setSearch(e.target.value);
           }}
         />
+        <i className="fas fa-search"></i>
       </div>
       <div id="indicResults">
         {result === "" ? (

@@ -1,6 +1,7 @@
 $break-point-1: 750px;
+$break-point-3: 1350px;
 $color-1: rgba(255, 202, 15, 1);
-$color-2: rgba(217, 248, 248, 0.9);
+$color-2: rgba(234, 240, 240, 0.9);
 $color-3: rgba(124, 121, 121, 0.568);
 
 body {
@@ -8,14 +9,17 @@ body {
   background-color: $color-2;
   caret-color: transparent;
   min-width: 300px;
-  input {
-    caret-color: black !important;
-  }
   a,
   a:visited,
   a:active {
     color: black;
     text-decoration: none;
+  }
+  input {
+    border: 1px solid black;
+  }
+  input:focus {
+    caret-color: black !important;
   }
 }
 header {
@@ -28,7 +32,7 @@ header {
   background-color: $color-1;
   display: flex;
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
   #burger_menu {
     margin: 5px;
     display: flex;
@@ -67,7 +71,7 @@ header {
   }
   a {
     background-color: white;
-    padding: 10px;
+    padding: 15px 10px 15px 10px;
     margin: 5px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -86,6 +90,9 @@ header {
   }
 }
 #acceuil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   #indicResults {
     padding-right: 20px;
     position: relative;
@@ -96,10 +103,10 @@ header {
     background-color: white;
     width: 100%;
     position: fixed;
-    top: 50px;
+    top: 60px;
     z-index: 0;
     @media (min-width: $break-point-1) {
-      top: 45px;
+      top: 57px;
       left: 250px;
       z-index: 1;
       background-color: transparent;
@@ -108,31 +115,43 @@ header {
       margin: 20px 0 10px 20px;
       padding-left: 10px;
       width: 70%;
-      height: 30px;
+      height: 32px;
       border: 1px solid black;
       border-radius: 5px;
       @media (min-width: $break-point-1) {
         width: 50%;
       }
     }
+    i {
+      position: relative;
+      left: 10px;
+      cursor: pointer;
+    }
   }
   #recette_container {
-    padding-top: 40px;
+    padding-top: 70px;
     margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    .recette {
-      border: 5px solid white;
+    border-radius: 20px;
+    @media (min-width: $break-point-1) {
+      width: 70%;
+      padding-top: 30px;
+    }
+    @media (min-width: $break-point-3) {
       background-color: white;
-      border-radius: 15px;
+    }
+    .recette {
+      background-color: white;
+      border-radius: 20px;
       box-shadow: 1px 1px 5px grey;
-      margin: 10px;
+      margin: 10px 0 30px 0;
       min-width: 250px;
-      max-width: 600px;
+      max-width: 700px;
       img {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
         width: 100%;
       }
       .recette_text {
@@ -142,5 +161,16 @@ header {
         }
       }
     }
+  }
+}
+#createRecette {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  input {
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+    height: 30px;
   }
 }
