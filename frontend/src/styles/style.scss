@@ -1,4 +1,4 @@
-$break-point-1: 600px;
+$break-point-1: 750px;
 $color-1: rgba(255, 202, 15, 1);
 $color-2: rgba(217, 248, 248, 0.9);
 $color-3: rgba(124, 121, 121, 0.568);
@@ -86,33 +86,50 @@ header {
   }
 }
 #acceuil {
+  #indicResults {
+    padding-right: 20px;
+    position: relative;
+    top: 40px;
+    left: 20px;
+  }
   #recherche-container {
-    background-color: $color-2;
+    background-color: white;
     width: 100%;
     position: fixed;
     top: 50px;
     z-index: 0;
+    @media (min-width: $break-point-1) {
+      top: 45px;
+      left: 250px;
+      z-index: 1;
+      background-color: transparent;
+    }
     #recherche {
-      margin: 20px 0 7px 20px;
+      margin: 20px 0 10px 20px;
       padding-left: 10px;
       width: 70%;
       height: 30px;
       border: 1px solid black;
       border-radius: 5px;
-      img {
-        width: 100px;
-        height: 100px;
+      @media (min-width: $break-point-1) {
+        width: 50%;
       }
     }
   }
   #recette_container {
     padding-top: 40px;
-    margin: 20px 20px 2000px 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .recette {
       border: 5px solid white;
       background-color: white;
       border-radius: 15px;
       box-shadow: 1px 1px 5px grey;
+      margin: 10px;
+      min-width: 250px;
+      max-width: 600px;
       img {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
