@@ -4,6 +4,9 @@ $break-point-3: 1350px;
 $color-1: rgba(255, 202, 15, 1);
 $color-2: rgba(234, 240, 240, 0.9);
 $color-3: rgba(124, 121, 121, 0.568);
+@mixin transition {
+  transition: 0.4s ease-in-out;
+}
 
 body {
   margin: 0;
@@ -66,6 +69,7 @@ header {
     padding: 12px 10px 10px 10px;
     position: absolute;
     right: 20px;
+    @include transition;
     @media (min-width: $break-point-1) {
       left: 20px;
     }
@@ -130,6 +134,7 @@ header {
       height: 32px;
       border: 1px solid black;
       border-radius: 5px;
+      background-color: $color-2;
       @media (min-width: $break-point-1) {
         width: 50%;
       }
@@ -162,7 +167,7 @@ header {
       min-width: 250px;
       max-width: 700px;
       cursor: pointer;
-      transition: 0.4s ease-in-out;
+      @include transition;
       &:hover {
         opacity: 0.7;
       }
