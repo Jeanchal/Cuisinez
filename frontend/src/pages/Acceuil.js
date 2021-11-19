@@ -4,6 +4,7 @@ import Recettes from "../components/Recettes";
 import data from "../objet";
 
 const Acceuil = () => {
+  const [inputSearch, setInputSearch] = useState("");
   const [search, setSearch] = useState("");
   const result = data.filter((item) => item.name.includes(search));
   console.log(result);
@@ -17,10 +18,15 @@ const Acceuil = () => {
           id="recherche"
           placeholder="Que recherchez vous..."
           onChange={(e) => {
-            setSearch(e.target.value);
+            setInputSearch(e.target.value);
           }}
         />
-        <i className="fas fa-search"></i>
+        <i
+          className="fas fa-search"
+          onClick={() => {
+            setSearch(inputSearch);
+          }}
+        ></i>
       </div>
       <div id="indicResults">
         {result === "" ? (

@@ -16,6 +16,7 @@ const Header = () => {
           <div></div>
         </div>
         <h1>Cuisinez</h1>
+        <i className="fas fa-arrow-left" id="arrow"></i>
       </div>
       <div className={displayMenu === false ? null : "displayNav"}>
         <Navigation activDisplayMenu={activDisplayMenu} />

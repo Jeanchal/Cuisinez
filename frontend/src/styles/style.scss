@@ -1,3 +1,4 @@
+$min-width: 300px;
 $break-point-1: 750px;
 $break-point-3: 1350px;
 $color-1: rgba(255, 202, 15, 1);
@@ -8,7 +9,7 @@ body {
   margin: 0;
   background-color: $color-2;
   caret-color: transparent;
-  min-width: 300px;
+  min-width: $min-width;
   a,
   a:visited,
   a:active {
@@ -23,6 +24,7 @@ body {
   }
 }
 header {
+  min-width: $min-width;
   position: fixed;
   width: 100%;
   top: 0;
@@ -53,10 +55,20 @@ header {
   h1 {
     margin: 0;
     font-size: 250%;
-    font-weight: lighter;
+    // font-weight: lighter;
     color: white;
     width: 100%;
     text-align: center;
+  }
+  #arrow {
+    color: white;
+    font-size: 150%;
+    padding: 12px 10px 10px 10px;
+    position: absolute;
+    right: 20px;
+    @media (min-width: $break-point-1) {
+      left: 20px;
+    }
   }
 }
 #Navigation {
@@ -134,24 +146,29 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 20px;
-    @media (min-width: $break-point-1) {
-      width: 70%;
-      padding-top: 30px;
-    }
-    @media (min-width: $break-point-3) {
-      background-color: white;
-    }
+    // border-radius: 20px;
+    // @media (min-width: $break-point-1) {
+    //   width: 70%;
+    //   padding-top: 30px;
+    // }
+    // @media (min-width: $break-point-3) {
+    //   background-color: white;
+    // }
     .recette {
       background-color: white;
-      border-radius: 20px;
+      border-radius: 10px;
       box-shadow: 1px 1px 5px grey;
       margin: 10px 0 30px 0;
       min-width: 250px;
       max-width: 700px;
+      cursor: pointer;
+      transition: 0.4s ease-in-out;
+      &:hover {
+        opacity: 0.7;
+      }
       img {
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         width: 100%;
       }
       .recette_text {
