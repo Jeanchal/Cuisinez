@@ -112,8 +112,11 @@ header {
   #indicResults {
     padding-right: 20px;
     position: relative;
-    top: 40px;
+    top: 60px;
     left: 20px;
+    @media (min-width: $break-point-1) {
+      top: 20px;
+    }
   }
   #recherche-container {
     background-color: white;
@@ -151,14 +154,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // border-radius: 20px;
-    // @media (min-width: $break-point-1) {
-    //   width: 70%;
-    //   padding-top: 30px;
-    // }
-    // @media (min-width: $break-point-3) {
-    //   background-color: white;
-    // }
     .recette {
       background-color: white;
       border-radius: 10px;
@@ -190,9 +185,11 @@ header {
   flex-direction: column;
   margin-left: 20px;
   input {
-    margin: 10px;
+    width: 90%;
+    margin-bottom: 10px;
     padding: 5px;
-    width: 300px;
+    min-width: 250px;
+    max-width: 600px;
     height: 30px;
   }
 }
