@@ -13,6 +13,9 @@ const Navigation = ({ activDisplayMenu }) => {
       <NavLink to="/mes_recettes" onClick={activDisplayMenu}>
         Mes recettes
       </NavLink>
+      <NavLink to="/se_connecter" onClick={activDisplayMenu}>
+        Se Connecter
+      </NavLink>
     </div>
   );
 };

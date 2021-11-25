@@ -1,34 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import Signin from "../components/Connexion/Signin";
+import Signup from "../components/Connexion/Signup";
 import Header from "../components/Header";
 
 const Connexion = () => {
+  const [signin, setSignin] = useState(false);
+
+  function activSignin() {
+    signin === false ? setSignin(true) : setSignin(false);
+  }
+
   return (
     <div className="page">
       <Header />
-      <button>Se Connecter</button>
-      <br />
-      <button>S'inscrire</button>
       <div>
-        <h2>Se connecter</h2>
-        <input type="text" placeholder="email" />
-        <br />
-        <input type="text" placeholder="Password" />
-        <br />
-        <button>Se connecter</button>
+        {signin === false ? (
+          <div>
+            <Signup />
+            <br />
+            <br />
+            <button onClick={activSignin}>S'inscrire</button>
+          </div>
+        ) : null}
       </div>
       <div>
-        <h2>S'inscrire</h2>
-        <input type="text" placeholder="Prénom" />
-        <br />
-        <input type="text" placeholder="Nom" />
-        <br />
-        <input type="text" placeholder="email" />
-        <br />
-        <input type="text" placeholder="Password" />
-        <br />
-        <input type="text" placeholder="confirm Password" />
-        <br />
-        <button>S'inscrire'</button>
+        {signin === true ? (
+          <div>
+            <Signin />
+            <br />
+            <br />
+            <button onClick={activSignin}>Se Connecter</button>
+          </div>
+        ) : null}
       </div>
     </div>
   );
