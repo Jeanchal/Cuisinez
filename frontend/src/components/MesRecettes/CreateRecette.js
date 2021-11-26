@@ -7,6 +7,10 @@ const CreateRecette = () => {
       <input type="text" placeholder="nom de la recette" />
       <input type="text" placeholder="temps de préparation" />
       <input type="text" placeholder="ingrédients" />
+      <div className="btn">
+        <span className="btn_plus">+</span>
+        <span> Ajouter un nouvel ingrédient...</span>
+      </div>
     </div>
   );
 };
