@@ -14,7 +14,7 @@ const Signin = () => {
       <br />
       <input type="text" placeholder="confirm Password" />
       <br />
-      <button>S'inscrire</button>
+      <button className="red_btn">S'inscrire</button>
     </div>
   );
 };

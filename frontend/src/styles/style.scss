@@ -7,6 +7,11 @@ $color-3: rgba(124, 121, 121, 0.568);
 @mixin transition {
   transition: 0.4s ease-in-out;
 }
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 body {
   margin: 0;
   background-color: $color-2;
@@ -24,6 +29,29 @@ body {
   }
   input:focus {
     caret-color: black !important;
+  }
+  input {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    @media (min-width: $break-point-1) {
+      width: 600px;
+    }
+  }
+  button {
+    border-radius: 5px;
+    width: 250px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    @media (min-width: $break-point-1) {
+      width: 612px;
+    }
+  }
+  .red_btn {
+    background-color: $color-1 !important;
   }
 }
 header {
@@ -102,6 +130,7 @@ header {
 }
 .page {
   margin-top: 80px;
+  @include flex-center;
   @media (min-width: $break-point-1) {
     margin-top: 140px;
   }
@@ -191,27 +220,11 @@ header {
     }
   }
 }
-#createRecette {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  input {
-    width: 90%;
-    margin-bottom: 10px;
-    padding: 5px;
-    min-width: 250px;
-    max-width: 600px;
-    height: 30px;
-  }
-  .btn_plus {
-    border: 1px solid black;
-    background-color: $color-1;
-    width: 24px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 180%;
-    font-weight: bold;
-    padding: 0 5px 0 5px;
-    cursor: pointer;
+#mes_recettes {
+  width: 90%;
+  @include flex-center;
+  #createRecette {
+    display: flex;
+    flex-direction: column;
   }
 }

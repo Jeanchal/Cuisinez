@@ -12,12 +12,17 @@ const MesRecettes = () => {
   return (
     <div className="page">
       <Header />
-      <h1>Mes Recettes</h1>
-      <button onClick={activCreate}> Créer une nouvelle recette</button>
-      <br />
-      <div>{createRctt === true ? <CreateRecette /> : null}</div>
-      <br />
-      <div>Vous n'avez créer aucune recette pour le moment...</div>
+      <div id="mes_recettes">
+        <h1>Mes Recettes</h1>
+        <button onClick={activCreate} className="red_btn">
+          {" "}
+          Créer une nouvelle recette
+        </button>
+        <br />
+        <div>{createRctt === true ? <CreateRecette /> : null}</div>
+        <br />
+        <div>Vous n'avez créer aucune recette pour le moment...</div>
+      </div>
     </div>
   );
 };

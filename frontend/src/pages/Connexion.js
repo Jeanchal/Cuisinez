@@ -18,7 +18,6 @@ const Connexion = () => {
           <div>
             <Signup />
             <br />
-            <br />
             <button onClick={activSignin}>S'inscrire</button>
           </div>
         ) : null}
@@ -27,7 +26,6 @@ const Connexion = () => {
         {signin === true ? (
           <div>
             <Signin />
-            <br />
             <br />
             <button onClick={activSignin}>Se Connecter</button>
           </div>

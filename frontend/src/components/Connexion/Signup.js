@@ -8,7 +8,7 @@ const Signup = () => {
       <br />
       <input type="text" placeholder="Password" />
       <br />
-      <button>Se connecter</button>
+      <button className="red_btn">Se connecter</button>
     </div>
   );
 };
