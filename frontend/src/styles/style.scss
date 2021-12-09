@@ -46,12 +46,16 @@ body {
     height: 40px;
     color: white;
     font-weight: bold;
+    background-color: grey;
     @media (min-width: $break-point-1) {
       width: 612px;
     }
   }
   .red_btn {
     background-color: $color-1 !important;
+  }
+  .red_color {
+    color: $color-1 !important;
   }
 }
 header {
@@ -119,7 +123,7 @@ header {
     margin: 5px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    width: 30%;
+    width: 40%;
     @media (min-width: $break-point-1) {
       width: auto;
     }
@@ -201,20 +205,40 @@ header {
       margin: 10px 0 30px 0;
       min-width: 250px;
       max-width: 700px;
-      cursor: pointer;
-      @include transition;
-      &:hover {
-        opacity: 0.7;
-      }
       img {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         width: 100%;
+        cursor: pointer;
+        @include transition;
+        &:hover {
+          opacity: 0.7;
+        }
       }
       .recette_text {
         padding: 10px;
         h3 {
           margin: 0;
+        }
+        #icons_container {
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          #stars {
+            i {
+              font-size: 120%;
+              margin: 2px;
+              color: grey;
+            }
+          }
+          #coeur {
+            position: relative;
+            bottom: 27px;
+            margin-right: 20px;
+            font-size: 250%;
+            color: grey;
+            cursor: pointer;
+          }
         }
       }
     }
