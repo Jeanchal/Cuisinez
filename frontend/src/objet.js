@@ -9,11 +9,11 @@ const data = [
       "500gr de carottes",
       "2 kilos de pommes de terre",
     ],
-    url_image: "ggggg",
+    url_image: "../img/boeuf_bourguignon.jpg",
   },
   {
     id: "000002",
-    name: "Boeuf bourguigon",
+    name: "Salade Piémontaise",
     time_cooking: "2 heures",
     ingredients: [
       "1 kilo de viande de boeuf",
@@ -21,11 +21,11 @@ const data = [
       "500gr de carottes",
       "2 kilos de pommes de terre",
     ],
-    url_image: "ggggg",
+    url_image: "../img/piemontaise.jpg",
   },
   {
     id: "000003",
-    name: "Boeuf bourguigon",
+    name: "Pizza Margherita",
     time_cooking: "2 heures",
     ingredients: [
       "1 kilo de viande de boeuf",
@@ -33,7 +33,7 @@ const data = [
       "500gr de carottes",
       "2 kilos de pommes de terre",
     ],
-    url_image: "ggggg",
+    url_image: "../img/Pizza-Margherita.jpg",
   },
 ];
 

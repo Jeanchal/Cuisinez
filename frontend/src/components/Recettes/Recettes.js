@@ -10,7 +10,7 @@ const Recettes = ({ result, recette }) => {
 
   return (
     <div className="recette">
-      <img src="../img/boeuf_bourguignon.jpg" alt="recette" />
+      <img src={recette.url_image} alt="recette" />
       <div className="recette_text">
         <div id="titre_coeur_container">
           <h3>{recette.name}</h3>
