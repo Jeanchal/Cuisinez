@@ -4,6 +4,8 @@ $break-point-3: 1350px;
 $color-1: rgba(201, 80, 54, 1);
 $color-2: rgba(231, 230, 230, 0.678);
 $color-3: rgba(124, 121, 121, 0.568);
+$color-4: rgb(224, 183, 46);
+$borderR-size: 30px;
 @mixin transition {
   transition: 0.4s ease-in-out;
 }
@@ -56,6 +58,9 @@ body {
   }
   .red_color {
     color: $color-1 !important;
+  }
+  .yellow_color {
+    color: $color-4 !important;
   }
 }
 header {
@@ -200,14 +205,14 @@ header {
     width: 90%;
     .recette {
       background-color: white;
-      border-radius: 10px;
+      border-radius: $borderR-size;
       box-shadow: 1px 1px 5px grey;
       margin: 10px 0 30px 0;
       min-width: 250px;
       max-width: 700px;
       img {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        border-top-left-radius: $borderR-size;
+        border-top-right-radius: $borderR-size;
         width: 100%;
         cursor: pointer;
         @include transition;
@@ -216,28 +221,28 @@ header {
         }
       }
       .recette_text {
-        padding: 10px;
+        padding: 0 15px 10px 15px;
         h3 {
+          font-size: 110%;
           margin: 0;
         }
-        #icons_container {
-          margin-top: 10px;
+        #titre_coeur_container {
           display: flex;
           justify-content: space-between;
-          #stars {
-            i {
-              font-size: 120%;
-              margin: 2px;
-              color: grey;
-            }
-          }
           #coeur {
             position: relative;
-            bottom: 27px;
-            margin-right: 20px;
-            font-size: 250%;
+            font-size: 200%;
             color: grey;
             cursor: pointer;
+          }
+        }
+        #stars {
+          i {
+            position: relative;
+            bottom: 5px;
+            font-size: 110%;
+            margin: 2px;
+            color: grey;
           }
         }
       }

@@ -1,7 +1,7 @@
 const data = [
   {
     id: "000001",
-    name: "boeuf bourguigon",
+    name: "Boeuf bourguigon",
     time_cooking: "2 heures",
     ingredients: [
       "1 kilo de viande de boeuf",
@@ -13,7 +13,7 @@ const data = [
   },
   {
     id: "000002",
-    name: "boeuf bourguigon",
+    name: "Boeuf bourguigon",
     time_cooking: "2 heures",
     ingredients: [
       "1 kilo de viande de boeuf",
@@ -25,7 +25,7 @@ const data = [
   },
   {
     id: "000003",
-    name: "boeuf bourguigon",
+    name: "Boeuf bourguigon",
     time_cooking: "2 heures",
     ingredients: [
       "1 kilo de viande de boeuf",

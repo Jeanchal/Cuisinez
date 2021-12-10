@@ -12,15 +12,8 @@ const Recettes = ({ result, recette }) => {
     <div className="recette">
       <img src="../img/boeuf_bourguignon.jpg" alt="recette" />
       <div className="recette_text">
-        <h3>{recette.name}</h3>
-        <div id="icons_container">
-          <div id="stars">
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-          </div>
+        <div id="titre_coeur_container">
+          <h3>{recette.name}</h3>
           <div
             id="coeur"
             onClick={activLike}
@@ -28,6 +21,13 @@ const Recettes = ({ result, recette }) => {
           >
             <i className="fas fa-heart"></i>
           </div>
+        </div>
+        <div id="stars">
+          <i className="fas fa-star yellow_color"></i>
+          <i className="fas fa-star yellow_color"></i>
+          <i className="fas fa-star yellow_color"></i>
+          <i className="fas fa-star"></i>
+          <i className="fas fa-star"></i>
         </div>
       </div>
     </div>

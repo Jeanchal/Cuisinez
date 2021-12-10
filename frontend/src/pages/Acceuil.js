@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import Recettes from "../components/Recettes";
+import Recettes from "../components/Recettes/Recettes";
 import data from "../objet";
 
 const Acceuil = () => {
