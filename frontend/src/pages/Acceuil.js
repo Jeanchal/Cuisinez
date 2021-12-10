@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Recettes from "../components/Recettes/Recettes";
+import BtnRemonter from "../components/BtnRemonter";
 import data from "../objet";
 
 const Acceuil = () => {
@@ -47,6 +48,7 @@ const Acceuil = () => {
           />
         ))}
       </div>
+      <BtnRemonter />
     </div>
   );
 };

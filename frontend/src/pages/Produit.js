@@ -12,7 +12,10 @@ const Produit = () => {
   let recette = result[0];
 
   function activIngr() {
-    ingred === false ? setIngred(true) : setIngred(false);
+    if (ingred === false) setIngred(true);
+  }
+  function activPrepa() {
+    if (ingred === true) setIngred(false);
   }
 
   return (
@@ -37,15 +40,27 @@ const Produit = () => {
             >
               Ingrédients
             </button>
-            <button>Préparation</button>
+            <button
+              onClick={activPrepa}
+              className={ingred === false ? "red_btn" : null}
+            >
+              Préparation
+            </button>
           </div>
           <div>
-            {ingred === false ? null : (
+            {ingred === true ? (
               <ul>
                 <li>{recette.ingredients[0]}</li>
                 <li>{recette.ingredients[1]}</li>
                 <li>{recette.ingredients[2]}</li>
                 <li>{recette.ingredients[3]}</li>
+              </ul>
+            ) : (
+              <ul>
+                <li>{recette.preparation[0]}</li>
+                <li>{recette.preparation[1]}</li>
+                <li>{recette.preparation[2]}</li>
+                <li>{recette.preparation[3]}</li>
               </ul>
             )}
           </div>

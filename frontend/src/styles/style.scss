@@ -48,6 +48,7 @@ body {
     }
   }
   button {
+    margin: 5px;
     border-radius: 5px;
     width: 250px;
     height: 40px;
@@ -147,6 +148,7 @@ header {
 }
 .page {
   margin-top: 80px;
+  margin-bottom: 40px;
   @include flex-center;
   @media (min-width: $break-point-1) {
     margin-top: 140px;
@@ -291,10 +293,22 @@ header {
       display: flex;
       width: 100%;
       button {
-        margin: 5px;
         width: 80% !important;
         cursor: pointer;
       }
     }
+  }
+}
+#btnRemonter {
+  position: fixed;
+  bottom: 10px;
+  right: 0;
+  width: 100%;
+  font-size: 320%;
+  color: $color-5;
+  @include flex-center;
+  @media (min-width: $break-point-3) {
+    width: 5%;
+    right: 5%;
   }
 }
