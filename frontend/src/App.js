@@ -5,6 +5,7 @@ import Profil from "./pages/Profil";
 import Produit from "./pages/Produit";
 import MesRecettes from "./pages/MesRecettes";
 import Connexion from "./pages/Connexion";
+import Favoris from "./pages/Favoris";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/mes_recettes" element={<MesRecettes />} />
         <Route path="/se_connecter" element={<Connexion />} />
         <Route path="/produit" element={<Produit />} />
+        <Route path="/favoris" element={<Favoris />} />
       </Routes>
     </BrowserRouter>
   );

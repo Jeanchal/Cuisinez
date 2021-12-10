@@ -264,3 +264,37 @@ header {
     flex-direction: column;
   }
 }
+#produit_container {
+  @include flex-center;
+  width: 100%;
+  #produit_titre_container {
+    display: flex;
+    justify-content: space-between;
+    i {
+      font-size: 140%;
+      font-weight: bold;
+      position: relative;
+      top: 20px;
+      right: 30px;
+    }
+    h1 {
+      font-size: 140%;
+    }
+  }
+  img {
+    width: 100%;
+  }
+  #produit_txt {
+    @include flex-center;
+    width: 90%;
+    #button_container {
+      display: flex;
+      width: 100%;
+      button {
+        margin: 5px;
+        width: 80% !important;
+        cursor: pointer;
+      }
+    }
+  }
+}

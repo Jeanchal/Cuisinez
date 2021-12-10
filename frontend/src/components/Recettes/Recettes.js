@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Recettes = ({ result, recette }) => {
+const Recettes = ({ result, recette, selectProduit, setSelectProduit }) => {
   // const result = data.filter((item) => item.name.includes(search));
   const [like, setLike] = useState(false);
   let lien = "/produit" + "?id=" + recette.id;
@@ -9,11 +9,14 @@ const Recettes = ({ result, recette }) => {
   function activLike() {
     like === false ? setLike(true) : setLike(false);
   }
+  function selectId() {
+    setSelectProduit(recette.id);
+  }
 
   return (
     <div className="recette">
       <Link to={lien}>
-        <img src={recette.url_image} alt="recette" />
+        <img src={recette.url_image} alt="recette" onClick={selectId} />
       </Link>
       <div className="recette_text">
         <div id="titre_coeur_container">

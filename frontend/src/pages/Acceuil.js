@@ -5,6 +5,7 @@ import data from "../objet";
 
 const Acceuil = () => {
   const [inputSearch, setInputSearch] = useState("");
+  const [selectProduit, setSelectProduit] = useState("");
   const [search, setSearch] = useState("");
   const result = data.filter((item) => item.name.includes(search));
   // console.log(result);
@@ -37,7 +38,13 @@ const Acceuil = () => {
       </div>
       <div id="recette_container">
         {result.map((recette) => (
-          <Recettes key={recette.id} recette={recette} result={result} />
+          <Recettes
+            key={recette.id}
+            recette={recette}
+            result={result}
+            selectProduit={selectProduit}
+            setSelectProduit={setSelectProduit}
+          />
         ))}
       </div>
     </div>
