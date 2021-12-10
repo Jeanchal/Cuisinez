@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import data from "../objet";
 
-let WindLoc = window.location.search;
-let idObjet = WindLoc.replace("?id=", "");
-const result = data.filter((item) => item.id.includes(idObjet));
-let recette = result[0];
-
-const Produit = ({ selectProduit }) => {
+const Produit = () => {
   const [ingred, setIngred] = useState(true);
 
-  console.log(selectProduit);
+  let WindLoc = window.location.search;
+  let idObjet = WindLoc.replace("?id=", "");
+  const result = data.filter((item) => item.id.includes(idObjet));
+  let recette = result[0];
 
   function activIngr() {
     ingred === false ? setIngred(true) : setIngred(false);
