@@ -67,6 +67,9 @@ body {
   .yellow_color {
     color: $color-4 !important;
   }
+  .displayNone {
+    display: none !important;
+  }
 }
 header {
   min-width: $min-width;

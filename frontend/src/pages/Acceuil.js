@@ -7,7 +7,7 @@ const Acceuil = () => {
   const [inputSearch, setInputSearch] = useState("");
   const [search, setSearch] = useState("");
   const result = data.filter((item) => item.name.includes(search));
-  console.log(result);
+  // console.log(result);
 
   return (
     <div id="acceuil" className="page">
