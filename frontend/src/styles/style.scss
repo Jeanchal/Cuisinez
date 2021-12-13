@@ -167,10 +167,11 @@ header {
   #indicResults {
     padding-right: 20px;
     position: relative;
-    top: 60px;
+    top: 70px;
     left: 20px;
+    z-index: 3;
     @media (min-width: $break-point-1) {
-      top: 20px;
+      top: 70px;
     }
   }
   #recherche-container {
@@ -206,23 +207,35 @@ header {
   }
   #recette_container {
     padding-top: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-center;
     width: 90%;
+    @media (min-width: $break-point-1) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media (min-width: $break-point-3) {
+      width: 70%;
+    }
     .recette {
       @include boxShadow;
       background-color: white;
       border-radius: $borderR-size;
-      margin: 10px 0 30px 0;
+      margin: 10px 15px 30px 15px;
       min-width: 250px;
       max-width: 700px;
+      @media (min-width: $break-point-1) {
+        max-width: 300px;
+      }
       img {
         border-top-left-radius: $borderR-size;
         border-top-right-radius: $borderR-size;
         width: 100%;
         cursor: pointer;
         @include transition;
+        @media (min-width: $break-point-1) {
+          height: 190px;
+        }
         &:hover {
           opacity: 0.7;
         }
