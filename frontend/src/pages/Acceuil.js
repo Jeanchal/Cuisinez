@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Recettes from "../components/Recettes/Recettes";
 import BtnRemonter from "../components/BtnRemonter";
+import axios from "axios";
 import data from "../objet";
+
+axios
+  .get("objet.json")
+  .then((res) => console.log(res.data))
+  .catch((err) => console.log(err));
+
+console.log(data);
 
 const Acceuil = () => {
   const [inputSearch, setInputSearch] = useState("");
   const [selectProduit, setSelectProduit] = useState("");
   const [search, setSearch] = useState("");
   const result = data.filter((item) => item.name.includes(search));
-  // console.log(result);
 
   return (
     <div id="acceuil" className="page">
