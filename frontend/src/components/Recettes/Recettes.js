@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Recettes = ({ result, recette, selectProduit, setSelectProduit }) => {
-  // const result = data.filter((item) => item.name.includes(search));
+const Recettes = ({ recette, setSelectProduit }) => {
   const [like, setLike] = useState(false);
-  let lien = "/produit" + "?id=" + recette.id;
+
+  let lien = "/produit?id=" + recette.id;
 
   function activLike() {
     like === false ? setLike(true) : setLike(false);

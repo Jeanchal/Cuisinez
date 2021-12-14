@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
-import data from "../objet";
+// import data from "../objet";
 
-const Produit = () => {
+const Produit = ({ data }) => {
   const [ingred, setIngred] = useState(true);
+  let idObjet = window.location.search.replace("?id=", "");
+  let recette;
 
-  let WindLoc = window.location.search;
-  let idObjet = WindLoc.replace("?id=", "");
-  const result = data.filter((item) => item.id.includes(idObjet));
-  let recette = result[0];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].id.includes(idObjet)) recette = data[i];
+  }
 
   function activIngr() {
     if (ingred === false) setIngred(true);
