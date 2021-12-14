@@ -17,7 +17,6 @@ const Acceuil = () => {
   const [selectProduit, setSelectProduit] = useState("");
   const [search, setSearch] = useState("");
   const result = data.filter((item) => item.name.includes(search));
-  result.length = 12;
 
   return (
     <div id="acceuil" className="page">

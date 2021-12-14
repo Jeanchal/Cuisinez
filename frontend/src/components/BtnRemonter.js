@@ -1,10 +1,10 @@
 import React from "react";
 
-window.addEventListener("scroll", () => {
-  let btn = document.getElementById("btnRemonter");
-  if (window.scrollY > 200) btn.classList.remove("displayNone");
-  if (window.scrollY < 200) btn.classList.add("displayNone");
-});
+// window.addEventListener("scroll", () => {
+//   let btn = document.getElementById("btnRemonter");
+//   if (window.scrollY > 200) btn.classList.remove("displayNone");
+//   if (window.scrollY < 200) btn.classList.add("displayNone");
+// });
 
 function remonter() {
   window.scrollTo(0, 0);
