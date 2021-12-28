@@ -3,6 +3,7 @@
     "id": "000001",
     "name": "Boeuf bourguigon",
     "time_cooking": "2 heures",
+    "note": 3,
     "url_image": "../img/boeuf_bourguignon.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -21,6 +22,7 @@
     "id": "000002",
     "name": "Salade Piémontaise",
     "time_cooking": "2 heures",
+    "note": 4,
     "url_image": "../img/piemontaise.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -39,6 +41,7 @@
     "id": "000003",
     "name": "Pizza Margherita",
     "time_cooking": "2 heures",
+    "note": 2,
     "url_image": "../img/Pizza-Margherita.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -57,6 +60,7 @@
     "id": "000004",
     "name": "Boeuf bourguigon",
     "time_cooking": "2 heures",
+    "note": 3,
     "url_image": "../img/boeuf_bourguignon.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -75,6 +79,7 @@
     "id": "000005",
     "name": "Salade Piémontaise",
     "time_cooking": "2 heures",
+    "note": 4,
     "url_image": "../img/piemontaise.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -93,6 +98,7 @@
     "id": "000006",
     "name": "Boeuf bourguigon",
     "time_cooking": "2 heures",
+    "note": 2,
     "url_image": "../img/boeuf_bourguignon.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -111,6 +117,7 @@
     "id": "000007",
     "name": "Salade Piémontaise",
     "time_cooking": "2 heures",
+    "note": 3,
     "url_image": "../img/piemontaise.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -129,6 +136,7 @@
     "id": "000008",
     "name": "Pizza Margherita",
     "time_cooking": "2 heures",
+    "note": 3,
     "url_image": "../img/Pizza-Margherita.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -147,6 +155,7 @@
     "id": "000009",
     "name": "Boeuf bourguigon",
     "time_cooking": "2 heures",
+    "note": 4,
     "url_image": "../img/boeuf_bourguignon.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -165,6 +174,7 @@
     "id": "0000010",
     "name": "Salade Piémontaise",
     "time_cooking": "2 heures",
+    "note": 4,
     "url_image": "../img/piemontaise.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -183,6 +193,7 @@
     "id": "0000011",
     "name": "Pizza Margherita",
     "time_cooking": "2 heures",
+    "note": 3,
     "url_image": "../img/Pizza-Margherita.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -201,6 +212,7 @@
     "id": "000012",
     "name": "Boeuf bourguigon",
     "time_cooking": "2 heures",
+    "note": 2,
     "url_image": "../img/boeuf_bourguignon.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -219,6 +231,7 @@
     "id": "0000013",
     "name": "Salade Piémontaise",
     "time_cooking": "2 heures",
+    "note": 3,
     "url_image": "../img/piemontaise.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -237,6 +250,7 @@
     "id": "0000014",
     "name": "Pizza Margherita",
     "time_cooking": "2 heures",
+    "note": 3,
     "url_image": "../img/Pizza-Margherita.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -255,6 +269,7 @@
     "id": "0000015",
     "name": "Pizza Margherita",
     "time_cooking": "2 heures",
+    "note": 5,
     "url_image": "../img/Pizza-Margherita.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",
@@ -273,6 +288,7 @@
     "id": "0000016",
     "name": "Pizza Margherita",
     "time_cooking": "2 heures",
+    "note": 3,
     "url_image": "../img/Pizza-Margherita.jpg",
     "ingredients": [
       "1 kilo de viande de boeuf",

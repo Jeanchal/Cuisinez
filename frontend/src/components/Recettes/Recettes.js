@@ -9,6 +9,8 @@ const Recettes = ({ recette }) => {
     like === false ? setLike(true) : setLike(false);
   }
 
+  const yellowStar = "fas fa-star yellow_color";
+
   return (
     <div className="recette" id={recette.id}>
       <Link to={lien}>
@@ -26,11 +28,11 @@ const Recettes = ({ recette }) => {
           </div>
         </div>
         <div id="stars">
-          <i className="fas fa-star yellow_color"></i>
-          <i className="fas fa-star yellow_color"></i>
-          <i className="fas fa-star yellow_color"></i>
-          <i className="fas fa-star"></i>
-          <i className="fas fa-star"></i>
+          <i className={recette.note > 0 ? yellowStar : "fas fa-star"}></i>
+          <i className={recette.note > 1 ? yellowStar : "fas fa-star"}></i>
+          <i className={recette.note > 2 ? yellowStar : "fas fa-star"}></i>
+          <i className={recette.note > 3 ? yellowStar : "fas fa-star"}></i>
+          <i className={recette.note > 4 ? yellowStar : "fas fa-star"}></i>
         </div>
       </div>
     </div>
