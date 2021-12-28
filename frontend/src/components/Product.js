@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
-const Product = ({ data, setActivProduit }) => {
+const Product = ({ data }) => {
   const [ingred, setIngred] = useState(true);
   let idObjet = window.location.search.replace("?id=", "");
   let recette;
@@ -20,7 +19,7 @@ const Product = ({ data, setActivProduit }) => {
   return (
     <div id="produit_container">
       <div id="produit_titre_container">
-        <i className="fas fa-arrow-left" onClick={setActivProduit(false)}></i>
+        <i className="fas fa-arrow-left"></i>
         <h1>{recette.name}</h1>
       </div>
       <img src={recette.url_image} alt="recette" />

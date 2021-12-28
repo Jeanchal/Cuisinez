@@ -5,7 +5,7 @@ import BtnRemonter from "../components/BtnRemonter";
 import "../fonctions";
 import Product from "../components/Product";
 
-const Acceuil = ({ data, setSelectProduit }) => {
+const Acceuil = ({ data }) => {
   const [search, setSearch] = useState("");
   const [activProduit, setActivProduit] = useState(false);
   let result = [];
@@ -14,15 +14,6 @@ const Acceuil = ({ data, setSelectProduit }) => {
     let name = data[i].name.toLowerCase().noAccent();
     if (name.includes(search)) result.push(data[i]);
   }
-
-  // for (let i = 0; i < data.length; i++) {
-  //   let item = data[i];
-  //   let ingredient = item.ingredients;
-  //   if (item.name.includes(search)) result.push(item);
-  //   for (let x = 0; x < ingredient.length; x++) {
-  //     if (ingredient.includes(search)) result.push(item);
-  //   }
-  // }
 
   return (
     <div id="acceuil" className="page">
@@ -48,14 +39,10 @@ const Acceuil = ({ data, setSelectProduit }) => {
       <div id="recette_container">
         {activProduit === false ? (
           result.map((recette) => (
-            <Recettes
-              key={recette.id}
-              recette={recette}
-              setActivProduit={setActivProduit}
-            />
+            <Recettes key={recette.id} recette={recette} />
           ))
         ) : (
-          <Product data={data} setActivProduit={setActivProduit} />
+          <Product data={data} />
         )}
       </div>
       <BtnRemonter />
