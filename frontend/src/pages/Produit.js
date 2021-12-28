@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
-// import data from "../objet";
 
 const Produit = ({ data }) => {
   const [ingred, setIngred] = useState(true);
   let idObjet = window.location.search.replace("?id=", "");
   let recette;
 
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].id.includes(idObjet)) recette = data[i];
-  }
-
   function activIngr() {
     if (ingred === false) setIngred(true);
   }
   function activPrepa() {
     if (ingred === true) setIngred(false);
+  }
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].id.includes(idObjet)) recette = data[i];
   }
 
   return (

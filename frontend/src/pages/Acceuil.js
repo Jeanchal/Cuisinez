@@ -3,11 +3,9 @@ import Header from "../components/Header";
 import Recettes from "../components/Recettes/Recettes";
 import BtnRemonter from "../components/BtnRemonter";
 import "../fonctions";
-import Product from "../components/Product";
 
 const Acceuil = ({ data }) => {
   const [search, setSearch] = useState("");
-  const [activProduit, setActivProduit] = useState(false);
   let result = [];
 
   for (let i = 0; i < data.length; i++) {
@@ -37,13 +35,9 @@ const Acceuil = ({ data }) => {
         ) : null}
       </div>
       <div id="recette_container">
-        {activProduit === false ? (
-          result.map((recette) => (
-            <Recettes key={recette.id} recette={recette} />
-          ))
-        ) : (
-          <Product data={data} />
-        )}
+        {result.map((recette) => (
+          <Recettes key={recette.id} recette={recette} />
+        ))}
       </div>
       <BtnRemonter />
     </div>
