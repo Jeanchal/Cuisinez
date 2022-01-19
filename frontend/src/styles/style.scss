@@ -329,3 +329,27 @@ header {
     right: 5%;
   }
 }
+#profil {
+  figure {
+    margin: 0;
+    position: relative;
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 5px solid white;
+      box-shadow: 1px 1px 15px rgb(175, 174, 174);
+    }
+  }
+  #infos-container {
+    background-color: white;
+    width: 95%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px rgb(175, 174, 174);
+    p {
+      padding: 10px;
+    }
+  }
+}
