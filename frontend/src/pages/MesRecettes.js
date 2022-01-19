@@ -6,7 +6,12 @@ const MesRecettes = () => {
   const [createRctt, setCreateRctt] = useState(false);
 
   function activCreate() {
-    createRctt === false ? setCreateRctt(true) : setCreateRctt(false);
+    if (createRctt === true) {
+      if (window.confirm("Êtes vous sur de quitter cette page ?") === true)
+        createRctt === false ? setCreateRctt(true) : setCreateRctt(false);
+    } else {
+      createRctt === false ? setCreateRctt(true) : setCreateRctt(false);
+    }
   }
 
   return (
@@ -14,14 +19,13 @@ const MesRecettes = () => {
       <Header />
       <div id="mes_recettes">
         <h1>Mes Recettes</h1>
+        <div></div>
         <button onClick={activCreate} className="red_btn">
-          {" "}
-          Créer une nouvelle recette
+          {createRctt === true ? "Voir mes recettes" : "Créer une recette"}
         </button>
         <br />
-        <div>{createRctt === true ? <CreateRecette /> : null}</div>
+        <div>{createRctt === true ? <CreateRecette /> : <p>Hello</p>}</div>
         <br />
-        <div>Vous n'avez créer aucune recette pour le moment...</div>
       </div>
     </div>
   );
