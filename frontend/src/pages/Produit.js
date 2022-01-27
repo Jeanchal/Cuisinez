@@ -1,23 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+import axios from "axios";
 
-function Produit({ data }) {
+function Produit() {
   const [ingred, setIngred] = useState(true);
-  let idObjet = window.location.search.replace("=", "");
-  let recette;
+  const [recette, setRecette] = useState({
+    id: "000000",
+    name: "",
+    time_cooking: "",
+    note: 0,
+    imageUrl: "default.jpg",
+    ingredients: ["", "", "", ""],
+    preparation: ["", "", "", ""],
+  });
+  const produitId = window.location.pathname.replace("/produit=", "");
 
-  console.log(data);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3010/api/produits/" + produitId)
+      .then((res) => setRecette(res.data))
+      .catch((err) => console.log(err));
+  }, []);
 
   function activIngr() {
     if (ingred === false) setIngred(true);
   }
   function activPrepa() {
     if (ingred === true) setIngred(false);
-  }
-
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].id.includes(idObjet)) recette = data[i];
   }
 
   return (
@@ -30,7 +40,7 @@ function Produit({ data }) {
           </Link>
           <h1>{recette.name}</h1>
         </div>
-        <img src={recette.url_image} alt="recette" />
+        <img src={"../img/" + recette.imageUrl} alt="recette" />
         <div id="produit_txt">
           <p>
             temps de préparation: <span>{recette.time_cooking}</span>

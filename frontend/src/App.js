@@ -13,7 +13,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("objet.json")
+      .get("http://localhost:3010/api/produits/")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);

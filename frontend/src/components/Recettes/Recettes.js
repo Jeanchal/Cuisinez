@@ -13,7 +13,7 @@ const Recettes = ({ recette }) => {
   return (
     <div className="recette" id={recette.id}>
       <Link to={"/produit=" + recette.id}>
-        <img src={recette.url_image} alt="recette" />
+        <img src={"../img/" + recette.imageUrl} alt="recette" />
       </Link>
       <div className="recette_text">
         <div id="titre_coeur_container">
