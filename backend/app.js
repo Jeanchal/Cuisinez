@@ -1,7 +1,8 @@
 const express = require("express");
-const app = express();
 const path = require("path");
-require("./config/database");
+const produitRoutes = require("./routes/produitRoutes");
+
+const app = express();
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -16,7 +17,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "images")));
+app.use(express.static("images"));
+
+app.use(express.json());
+app.use("api/produit", produitRoutes);
 
 module.exports = app;

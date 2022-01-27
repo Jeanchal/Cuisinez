@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Recettes = ({ recette }) => {
   const [like, setLike] = useState(false);
-  let lien = "/produit?id=" + recette.id;
 
   function activLike() {
     like === false ? setLike(true) : setLike(false);
@@ -13,7 +12,7 @@ const Recettes = ({ recette }) => {
 
   return (
     <div className="recette" id={recette.id}>
-      <Link to={lien}>
+      <Link to={"/produit=" + recette.id}>
         <img src={recette.url_image} alt="recette" />
       </Link>
       <div className="recette_text">

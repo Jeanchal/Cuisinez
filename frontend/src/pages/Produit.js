@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 
-const Produit = ({ data }) => {
+function Produit({ data }) {
   const [ingred, setIngred] = useState(true);
-  let idObjet = window.location.search.replace("?id=", "");
+  let idObjet = window.location.search.replace("=", "");
   let recette;
+
+  console.log(data);
 
   function activIngr() {
     if (ingred === false) setIngred(true);
@@ -68,6 +70,6 @@ const Produit = ({ data }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Produit;

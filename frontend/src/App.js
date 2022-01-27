@@ -25,7 +25,7 @@ const App = () => {
         <Route path="/profil" element={<Profil />} />
         <Route path="/mes_recettes" element={<MesRecettes />} />
         <Route path="/se_connecter" element={<Connexion />} />
-        <Route path="/produit" element={<Produit data={data} />} />
+        <Route path="/produit=:id" element={<Produit data={data} />} />
         <Route path="/favoris" element={<Favoris />} />
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,20 @@
+{
+  "name": "cuisinez",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeanchal/Cuisinez.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeanchal/Cuisinez/issues"
+  },
+  "homepage": "https://github.com/Jeanchal/Cuisinez#readme"
+}
