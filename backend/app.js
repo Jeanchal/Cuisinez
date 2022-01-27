@@ -17,10 +17,9 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use(express.static("images"));
-
-app.use(express.json());
-app.use("api/produit", produitRoutes);
+app.use("/api/produits", produitRoutes);
 
 module.exports = app;
