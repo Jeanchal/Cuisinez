@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Acceuil from "./pages/Acceuil";
 import Profil from "./pages/Profil";
 import Produit from "./pages/Produit";
@@ -27,6 +27,7 @@ const App = () => {
         <Route path="/se_connecter" element={<Connexion />} />
         <Route path="/produit=:id" element={<Produit data={data} />} />
         <Route path="/favoris" element={<Favoris />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );

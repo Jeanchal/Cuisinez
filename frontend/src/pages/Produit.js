@@ -2,25 +2,29 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import axios from "axios";
+const object = {
+  id: "000000",
+  name: "",
+  time_cooking: "",
+  note: 0,
+  imageUrl: "default.jpg",
+  ingredients: ["", "", "", ""],
+  preparation: ["", "", "", ""],
+};
 
 function Produit() {
   const [ingred, setIngred] = useState(true);
-  const [recette, setRecette] = useState({
-    id: "000000",
-    name: "",
-    time_cooking: "",
-    note: 0,
-    imageUrl: "default.jpg",
-    ingredients: ["", "", "", ""],
-    preparation: ["", "", "", ""],
-  });
+  const [recette, setRecette] = useState(object);
   const produitId = window.location.pathname.replace("/produit=", "");
 
   useEffect(() => {
     axios
       .get("http://localhost:3010/api/produits/" + produitId)
       .then((res) => setRecette(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        window.location.pathname = "/";
+      });
   }, []);
 
   function activIngr() {
