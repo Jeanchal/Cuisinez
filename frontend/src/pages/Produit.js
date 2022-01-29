@@ -33,6 +33,9 @@ function Produit() {
   function activPrepa() {
     if (ingred === true) setIngred(false);
   }
+  function Ingredient({ ingr }) {
+    return <li>{ingr}</li>;
+  }
 
   return (
     <div className="page">
@@ -66,17 +69,15 @@ function Produit() {
           <div>
             {ingred === true ? (
               <ul>
-                <li>{recette.ingredients[0]}</li>
-                <li>{recette.ingredients[1]}</li>
-                <li>{recette.ingredients[2]}</li>
-                <li>{recette.ingredients[3]}</li>
+                {recette.ingredients.map((ingr) => (
+                  <Ingredient ingr={ingr} />
+                ))}
               </ul>
             ) : (
               <ul>
-                <li>{recette.preparation[0]}</li>
-                <li>{recette.preparation[1]}</li>
-                <li>{recette.preparation[2]}</li>
-                <li>{recette.preparation[3]}</li>
+                {recette.preparation.map((ingr) => (
+                  <Ingredient ingr={ingr} />
+                ))}
               </ul>
             )}
           </div>
