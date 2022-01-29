@@ -33,8 +33,8 @@ function Produit() {
   function activPrepa() {
     if (ingred === true) setIngred(false);
   }
-  function Ingredient({ ingr }) {
-    return <li>{ingr}</li>;
+  function ListElement({ element }) {
+    return <li>{element}</li>;
   }
 
   return (
@@ -69,14 +69,20 @@ function Produit() {
           <div>
             {ingred === true ? (
               <ul>
-                {recette.ingredients.map((ingr) => (
-                  <Ingredient ingr={ingr} />
+                {recette.ingredients.map((element) => (
+                  <ListElement
+                    element={element}
+                    key={Math.round(Math.random() * 1000)}
+                  />
                 ))}
               </ul>
             ) : (
               <ul>
-                {recette.preparation.map((ingr) => (
-                  <Ingredient ingr={ingr} />
+                {recette.preparation.map((element) => (
+                  <ListElement
+                    element={element}
+                    key={Math.round(Math.random() * 1000)}
+                  />
                 ))}
               </ul>
             )}
