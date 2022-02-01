@@ -59,6 +59,7 @@ body {
     color: white;
     font-weight: bold;
     background-color: $color-6;
+    cursor: pointer;
     @media (min-width: $break-point-1) {
       width: 612px;
     }
@@ -276,9 +277,37 @@ header {
 #mes_recettes {
   width: 90%;
   @include flex-center;
-  #createRecette {
+  #createRecette form {
     display: flex;
     flex-direction: column;
+    input {
+      height: 20px !important;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      li div {
+        display: flex;
+        input {
+          width: 50% !important;
+        }
+        button {
+          width: 20px !important;
+          height: 20px !important;
+          padding: 0;
+        }
+      }
+    }
+    .ajout-ingredients {
+      display: flex;
+      input {
+        width: 70% !important;
+      }
+      button {
+        width: 100px;
+        height: 33px;
+      }
+    }
   }
 }
 #produit_container {
