@@ -316,18 +316,14 @@ header {
   }
 }
 #btnRemonter {
+  z-index: 5;
   cursor: pointer;
   position: fixed;
-  bottom: 10px;
-  right: 0;
-  width: 100%;
+  bottom: 20px;
+  right: 40px;
   font-size: 320%;
-  color: $color-5;
   @include flex-center;
-  @media (min-width: $break-point-3) {
-    width: 5%;
-    right: 5%;
-  }
+  color: rgba(105, 105, 105, 0.8);
 }
 #profil {
   figure {

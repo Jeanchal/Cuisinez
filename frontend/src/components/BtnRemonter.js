@@ -1,19 +1,23 @@
-import React from "react";
-
-// window.addEventListener("scroll", () => {
-//   let btn = document.getElementById("btnRemonter");
-//   if (window.scrollY > 200) btn.classList.remove("displayNone");
-//   if (window.scrollY < 200) btn.classList.add("displayNone");
-// });
-
-function remonter() {
-  window.scrollTo(0, 0);
-}
+import React, { useState } from "react";
 
 const BtnRemonter = () => {
+  const [scrollPosition, setScrollPosition] = useState(false);
+
+  window.addEventListener("scroll", () => {
+    window.scrollY > 100 ? setScrollPosition(true) : setScrollPosition(false);
+  });
+
+  function remonter() {
+    window.scrollTo(0, 0);
+  }
+
   return (
-    <div id="btnRemonter" className="displayNone" onClick={remonter}>
-      <i className="fas fa-arrow-alt-circle-up"></i>
+    <div>
+      {scrollPosition === true ? (
+        <div id="btnRemonter" onClick={remonter}>
+          <i className="fas fa-caret-square-up"></i>
+        </div>
+      ) : null}
     </div>
   );
 };
