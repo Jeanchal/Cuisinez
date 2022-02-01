@@ -19,6 +19,9 @@ $borderR-size: 30px;
 @mixin boxShadow {
   box-shadow: 1px 1px 5px $color-3;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   background-color: $color-2;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
+import BtnRemonter from "../components/BtnRemonter";
 import axios from "axios";
 const object = {
   id: "000000",
@@ -89,6 +90,7 @@ function Produit() {
           </div>
         </div>
       </div>
+      <BtnRemonter />
     </div>
   );
 }
