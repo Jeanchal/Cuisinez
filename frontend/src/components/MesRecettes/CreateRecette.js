@@ -59,34 +59,22 @@ const CreateRecette = () => {
       <form action="">
         <input type="text" placeholder="nom de la recette" />
         <div className="time-container">
-          <select type="select">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-          <label>heures</label>
-          <select type="select">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
+          <label>Temps de préparation</label>
+          <div className="input-container">
+            <input
+              type="number"
+              max="24"
+              min="0"
+              placeholder="0"
+              maxLength="2"
+            />
+            <span></span>
+            <label>heures</label>
+          </div>
+          <input type="number" max="60" min="0" placeholder="0" maxLength="2" />
           <label>minutes</label>
+          <input type="number" max="60" min="0" placeholder="0" maxLength="2" />
+          <label>secondes</label>
         </div>
         <ul>
           {items.map((item) => (

@@ -36,7 +36,7 @@ body {
   }
   input,
   select {
-    border: 1px solid black;
+    border: 1px solid grey;
   }
   input:focus,
   select:focus {
@@ -52,6 +52,19 @@ body {
     padding: 5px;
     @media (min-width: $break-point-1) {
       width: 600px;
+    }
+  }
+  // input:valid {
+  //   border: 2px solid rgb(3, 216, 21);
+  // }
+  .input-container {
+    input:invalid {
+      border: 2px solid red;
+    }
+    input:invalid + span:after {
+      content: "✖";
+      color: red !important;
+      padding-left: 5px;
     }
   }
   button {
@@ -286,9 +299,6 @@ header {
     input {
       height: 20px !important;
     }
-    select {
-      width: 50px;
-    }
     ul {
       margin: 0;
       li div {
@@ -305,6 +315,9 @@ header {
     }
     .time-container {
       display: flex;
+      input {
+        width: 35px;
+      }
       label {
         margin: 10px 10px 10px 5px;
         padding-right: 10px;
