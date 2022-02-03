@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 const CreateRecette = () => {
   const object = { id: 0, value: "" };
-  const [value, setValue] = useState(object);
-  const [items] = useState([]);
+  const [ingredient, setIngredient] = useState(object);
+  const [tabIngredients] = useState([]);
 
-  function Tache({ item }) {
+  function ListeRecette({ item }) {
     return (
       <li>
         <div>
@@ -23,17 +23,19 @@ const CreateRecette = () => {
 
   function button(e) {
     e.preventDefault();
-    if (value.value.length < 4) {
+    if (ingredient.value.length < 4) {
       window.alert("impossible");
     } else {
-      items.push(value);
-      setValue(object);
+      tabIngredients.push(ingredient);
+      setIngredient(object);
     }
   }
   function modif(e) {
     e.preventDefault();
     const selectInput = e.target.parentNode.firstElementChild;
-    const resultat = items.find((item) => item.id === selectInput.id);
+    const resultat = tabIngredients.find(
+      (item) => item.id === Number(selectInput.id)
+    );
     resultat.value = selectInput.value;
   }
   function suppr(e) {
@@ -43,9 +45,11 @@ const CreateRecette = () => {
     );
     if (reponse === true) {
       const selectInput = e.target.parentNode.firstElementChild;
-      const resultat = items.find((item) => item.id === selectInput.id);
-      const index = items.indexOf(resultat);
-      items.splice(index, 1);
+      const resultat = tabIngredients.find(
+        (item) => item.id === selectInput.id
+      );
+      const index = tabIngredients.indexOf(resultat);
+      tabIngredients.splice(index, 1);
       selectInput.parentNode.parentNode.style = "display:none";
     }
   }
@@ -77,8 +81,8 @@ const CreateRecette = () => {
           <label>secondes</label>
         </div>
         <ul>
-          {items.map((item) => (
-            <Tache key={Math.round(Math.random() * 10000)} item={item} />
+          {tabIngredients.map((item) => (
+            <ListeRecette key={Math.round(Math.random() * 10000)} item={item} />
           ))}
         </ul>
         <div className="ajout-ingredients">
@@ -86,12 +90,12 @@ const CreateRecette = () => {
             type="text"
             placeholder="ingrédient..."
             onChange={(e) =>
-              setValue({
+              setIngredient({
                 id: Math.round(Math.random() * 1000),
                 value: e.target.value,
               })
             }
-            value={value.value}
+            value={ingredient.value}
           />
           <button onClick={button}>Ajouter</button>
         </div>
