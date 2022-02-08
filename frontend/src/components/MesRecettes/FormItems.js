@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ListeItems from "./ListeItems";
 
-const ListeIngredients = ({ object }) => {
+const FormItems = ({ object }) => {
   const [value, setValue] = useState(object);
   const [items] = useState([]);
 
@@ -32,7 +32,7 @@ const ListeIngredients = ({ object }) => {
       <div className="ajout-ingredients">
         <input
           type="text"
-          placeholder="ingrédient..."
+          placeholder="..."
           onChange={(e) =>
             setValue({
               id: Math.round(Math.random() * 1000),
@@ -47,4 +47,4 @@ const ListeIngredients = ({ object }) => {
   );
 };
 
-export default ListeIngredients;
+export default FormItems;

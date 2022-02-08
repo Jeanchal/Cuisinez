@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import ListeIngredients from "./ListeIngredients";
+import React from "react";
+import FormItems from "./FormItems";
 
 const CreateRecette = () => {
   const object = { id: 0, value: "" };
@@ -30,9 +30,9 @@ const CreateRecette = () => {
           <label>minutes</label>
         </div>
         <h3>Ingrédients</h3>
-        <ListeIngredients object={object} />
+        <FormItems object={object} />
         <h3>Etapes préparation</h3>
-        <ListeIngredients object={object} />
+        <FormItems object={object} />
         <button onClick={saveRecette}>Sauvegarder</button>
       </form>
     </div>
