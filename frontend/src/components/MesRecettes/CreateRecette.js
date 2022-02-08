@@ -1,57 +1,9 @@
 import React, { useState } from "react";
+import ListeIngredients from "./ListeIngredients";
 
 const CreateRecette = () => {
   const object = { id: 0, value: "" };
-  const [value, setValue] = useState(object);
-  const [items] = useState([]);
 
-  function ListeRecette({ item }) {
-    return (
-      <li>
-        <div>
-          <input
-            type="text"
-            id={item.id}
-            defaultValue={item.value}
-            onChange={modif}
-          />
-          <button onClick={suppr}>X</button>
-        </div>
-      </li>
-    );
-  }
-
-  function ajoutItem(tab, val) {
-    if (val.value.length < 4) {
-      window.alert("impossible");
-    } else {
-      tab.push(val);
-      setValue(object);
-    }
-  }
-  function ajoutIngr(e) {
-    e.preventDefault();
-    ajoutItem(items, value);
-  }
-  function modif(e) {
-    e.preventDefault();
-    const selectInput = e.target.parentNode.firstElementChild;
-    const resultat = items.find((item) => item.id === Number(selectInput.id));
-    resultat.value = selectInput.value;
-  }
-  function suppr(e) {
-    e.preventDefault();
-    let reponse = window.confirm(
-      "voulez-vous vraiment supprimer cet ingrédient ?"
-    );
-    if (reponse === true) {
-      const selectInput = e.target.parentNode.firstElementChild;
-      const resultat = items.find((item) => item.id === selectInput.id);
-      const index = items.indexOf(resultat);
-      items.splice(index, 1);
-      selectInput.parentNode.parentNode.style = "display:none";
-    }
-  }
   function saveRecette(e) {
     e.preventDefault();
   }
@@ -62,7 +14,7 @@ const CreateRecette = () => {
       <form action="">
         <input type="text" placeholder="nom de la recette" />
         <div className="time-container">
-          <label>Temps de préparation</label>
+          <label>Temps de préparation :</label>
           <div className="input-container">
             <input
               type="number"
@@ -74,30 +26,13 @@ const CreateRecette = () => {
             <span></span>
             <label>heures</label>
           </div>
-          <input type="number" max="60" min="0" placeholder="0" maxLength="2" />
+          <input type="number" max="59" min="0" placeholder="0" maxLength="2" />
           <label>minutes</label>
-          <input type="number" max="60" min="0" placeholder="0" maxLength="2" />
-          <label>secondes</label>
         </div>
-        <ul>
-          {items.map((item) => (
-            <ListeRecette key={Math.round(Math.random() * 10000)} item={item} />
-          ))}
-        </ul>
-        <div className="ajout-ingredients">
-          <input
-            type="text"
-            placeholder="ingrédient..."
-            onChange={(e) =>
-              setValue({
-                id: Math.round(Math.random() * 1000),
-                value: e.target.value,
-              })
-            }
-            value={value.value}
-          />
-          <button onClick={ajoutIngr}>Ajouter</button>
-        </div>
+        <h3>Ingrédients</h3>
+        <ListeIngredients object={object} />
+        <h3>Etapes préparation</h3>
+        <ListeIngredients object={object} />
         <button onClick={saveRecette}>Sauvegarder</button>
       </form>
     </div>
