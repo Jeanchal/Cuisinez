@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import FormItems from "./FormItems";
 
 const CreateRecette = () => {
   const object = { id: 0, value: "" };
+  const [tabIngredients] = useState([]);
+  const [tabPrepas] = useState([]);
 
   function saveRecette(e) {
     e.preventDefault();
+    console.log(tabIngredients, tabPrepas);
   }
 
   return (
@@ -30,9 +33,9 @@ const CreateRecette = () => {
           <label>minutes</label>
         </div>
         <h3>Ingrédients</h3>
-        <FormItems object={object} />
+        <FormItems object={object} items={tabIngredients} />
         <h3>Etapes préparation</h3>
-        <FormItems object={object} />
+        <FormItems object={object} items={tabPrepas} />
         <button onClick={saveRecette}>Sauvegarder</button>
       </form>
     </div>

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import ListeItems from "./ListeItems";
 
-const FormItems = ({ object }) => {
+const FormItems = ({ object, items }) => {
   const [value, setValue] = useState(object);
-  const [items] = useState([]);
 
   function ajoutItem(tab, val) {
     if (val.value.length < 4) {
