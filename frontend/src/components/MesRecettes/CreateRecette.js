@@ -3,19 +3,36 @@ import FormItems from "./FormItems";
 
 const CreateRecette = () => {
   const object = { id: 0, value: "" };
+  const [name, setName] = useState("");
   const [tabIngredients] = useState([]);
   const [tabPrepas] = useState([]);
 
   function saveRecette(e) {
     e.preventDefault();
-    console.log(tabIngredients, tabPrepas);
+    const objetData = {
+      userId: "userId",
+      name: name,
+      description: "description...",
+      imageUrl: "image.jpg",
+      tempsPrepa: { heures: 0, minutes: 5 },
+      ingredients: tabIngredients,
+      preparation: tabPrepas,
+    };
+    console.log(objetData);
   }
 
   return (
     <div id="createRecette">
       <h3>Créer une nouvelle recette</h3>
       <form action="">
-        <input type="text" placeholder="nom de la recette" />
+        <input
+          type="text"
+          placeholder="nom de la recette"
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+          value={name}
+        />
         <div className="time-container">
           <label>Temps de préparation :</label>
           <div className="input-container">
